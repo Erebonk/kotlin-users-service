@@ -7,5 +7,6 @@ data class Client(
         val password: String,
         val email: String,
         val clientCode: String,
-        val isAlive: Boolean
+        val isAlive: Boolean,
+        val carNumber: String
 )
