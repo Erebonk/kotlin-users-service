@@ -1,8 +1,9 @@
 package com.ere.consumer.usersservice.service.jooq
 
+
+import com.ere.consumer.tables.Cars.CARS
+import com.ere.consumer.tables.Clients.CLIENTS
 import com.ere.consumer.usersservice.domain.Client
-import com.ere.consumer.usersservice.domain.jooq.tables.Cars.CARS
-import com.ere.consumer.usersservice.domain.jooq.tables.Clients.CLIENTS
 import org.jooq.DSLContext
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
@@ -25,5 +26,4 @@ class UserDaoService(@Qualifier("masterDSLContext") val dslContext: DSLContext) 
                                 true,
                                 it.getValue(CARS.NUMBER))
                     }
-
 }

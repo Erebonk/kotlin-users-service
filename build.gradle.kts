@@ -44,28 +44,28 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-//jooqGenerator {
-//    configuration("primary", sourceSets.getByName("main")) {
-//        configuration = jooqCodegenConfiguration {
-//            jdbc {
-//                username = "postgres"
-//                password = "postgres"
-//                driver = "org.postgresql.Driver"
-//                url = "jdbc:postgresql://localhost:5432/public"
-//                schema = "dbo"
-//            }
-//
-//            generator {
-//                target {
-//                    packageName = "com.ere.consumer"
-//                    directory   = "${project.buildDir}/generated/jooq/primary"
-//                }
-//
-//                database {
-//                    name = "org.jooq.meta.postgres.PostgresDatabase"
-//                    inputSchema = "dbo"
-//                }
-//            }
-//        }
-//    }
-//}
+jooqGenerator {
+    configuration("primary", sourceSets.getByName("main")) {
+        configuration = jooqCodegenConfiguration {
+            jdbc {
+                username = "postgres"
+                password = "postgres"
+                driver = "org.postgresql.Driver"
+                url = "jdbc:postgresql://localhost:5432/public"
+                schema = "dbo"
+            }
+
+            generator {
+                target {
+                    packageName = "com.ere.consumer"
+                    directory   = "${project.buildDir}/generated/jooq/primary"
+                }
+
+                database {
+                    name = "org.jooq.meta.postgres.PostgresDatabase"
+                    inputSchema = "dbo"
+                }
+            }
+        }
+    }
+}

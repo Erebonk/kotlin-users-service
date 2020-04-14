@@ -11,7 +11,7 @@ class UserMessageService {
 
     val logger: Logger = LoggerFactory.getLogger(javaClass.simpleName)
 
-    @RabbitListener(queues = arrayOf("kotlin-client-queue"))
+    @RabbitListener(queues = arrayOf("kotlin-client-queue"), autoStartup = "false")
     fun findByClientCode(clientCode: String) : Client {
         logger.info("ktl: -> new message $clientCode")
         return Client(1, "s", "s", "s", "s", true, "")
