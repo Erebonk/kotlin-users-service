@@ -14,7 +14,7 @@ class UserMessageService {
     @RabbitListener(queues = arrayOf("kotlin-client-queue"))
     fun findByClientCode(clientCode: String) : Client {
         logger.info("ktl: -> new message $clientCode")
-        return Client(1, "s", "s", "s", "s", true)
+        return Client(1, "s", "s", "s", "s", true, "")
     }
 
 }

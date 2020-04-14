@@ -6,8 +6,6 @@ plugins {
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.71"
     kotlin("plugin.spring") version "1.3.71"
-//    id("nu.studer.jooq") version "4.1"
-//    id("java-library")
     id("com.rohanprabhu.kotlin-dsl-jooq") version "0.4.5"
 }
 
@@ -46,28 +44,28 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-jooqGenerator {
-    configuration("primary", sourceSets.getByName("main")) {
-        configuration = jooqCodegenConfiguration {
-            jdbc {
-                username = "postgres"
-                password = "postgres"
-                driver = "org.postgresql.Driver"
-                url = "jdbc:postgresql://localhost:5432/public"
-                schema = "dbo"
-            }
-
-            generator {
-                target {
-                    packageName = "com.ere.consumer"
-                    directory   = "${project.buildDir}/generated/jooq/primary"
-                }
-
-                database {
-                    name = "org.jooq.meta.postgres.PostgresDatabase"
-                    inputSchema = "dbo"
-                }
-            }
-        }
-    }
-}
+//jooqGenerator {
+//    configuration("primary", sourceSets.getByName("main")) {
+//        configuration = jooqCodegenConfiguration {
+//            jdbc {
+//                username = "postgres"
+//                password = "postgres"
+//                driver = "org.postgresql.Driver"
+//                url = "jdbc:postgresql://localhost:5432/public"
+//                schema = "dbo"
+//            }
+//
+//            generator {
+//                target {
+//                    packageName = "com.ere.consumer"
+//                    directory   = "${project.buildDir}/generated/jooq/primary"
+//                }
+//
+//                database {
+//                    name = "org.jooq.meta.postgres.PostgresDatabase"
+//                    inputSchema = "dbo"
+//                }
+//            }
+//        }
+//    }
+//}
